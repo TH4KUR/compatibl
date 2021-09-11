@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif; }
+
+.link {
+  text-decoration: none; }
+  .link__catchy {
+    color: #eee !important;
+    background-color: #ff0080;
+    transition: background-color 0.3s ease;
+    padding: 0.9rem 1.5rem !important;
+    border-radius: 0.4rem; }
+    .link__catchy:hover {
+      background-color: rgba(255, 0, 128, 0.8); }
+    .link__catchy--companion {
+      color: #eee;
+      transition: color 0.3s ease; }
+      .link__catchy--companion:hover {
+        color: #00ffff; }
+
+.heading {
+  font-weight: 400; }
+  .heading__primary {
+    color: #eee;
+    font-size: 2.5rem; }
+  .heading__secondary {
+    color: #ffc400;
+    font-style: normal;
+    font-size: 2.75rem; }
+
+.u-margin-small {
+  margin-bottom: 1rem; }
+
+.u-margin-medium {
+  margin-bottom: 2rem; }
+
+.u-margin-large {
+  margin-bottom: 3rem; }
+
+@media only screen and (max-width: 40.5rem) {
+  .branding {
+    display: none; } }
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  height: 9vh;
+  padding: 0rem 2rem;
+  box-shadow: 0px 1px 3px #ff0080; }
+  .navigation__logo:before {
+    content: "";
+    display: inline-block;
+    transform: translateX(0.5rem);
+    height: 3rem;
+    width: 3rem;
+    z-index: 1;
+    background-color: #ff0080;
+    border-radius: 50%; }
+  .navigation__logo:after {
+    display: inline-block;
+    z-index: 1;
+    content: "";
+    height: 3rem;
+    width: 3rem;
+    background-color: #00ffff;
+    border-radius: 50%; }
+  .navigation__list {
+    display: flex;
+    list-style: none;
+    font-size: 1.6rem; }
+  .navigation__item:not(:last-child) {
+    margin-right: 3rem; }
+  .navigation__link {
+    color: #eee; }
+
+main {
+  display: grid;
+  grid-gap: 1.5rem;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  height: calc(100vh - 9vh);
+  background-image: linear-gradient(to right, #000000c4, #0000003f), url(../login-bg-compressed.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+  @media only screen and (max-width: 39.0625em) {
+    main {
+      background-image: linear-gradient(to right, #0000003f, #0000003f), url(../login-bg-compressed.jpg);
+      grid-template-columns: repeat(1, 1fr); } }
+
+.showcase {
+  align-self: start;
+  padding: 2rem; }
+  @media only screen and (max-width: 39.0625em) {
+    .showcase {
+      display: none; } }
+  .showcase__text {
+    transform: translateY(9rem);
+    font-weight: 300;
+    color: #eee;
+    font-size: 2.25rem; }
+    .showcase__text span {
+      font-size: 2.5rem;
+      font-weight: 400;
+      display: block;
+      color: #00ffff;
+      font-size: 3.5rem; }
+
+.form-container {
+  color: #eee;
+  border-radius: 3px;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(min-content, max-content)) 1fr;
+  grid-gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 0.75rem 1rem;
+  height: auto;
+  width: 30rem; }
+  .form-container .form {
+    display: grid;
+    grid-template-rows: repeat(5, minmax(min-content, max-content));
+    grid-row-gap: 1.5rem; }
+    .form-container .form__info {
+      font-size: 1.5rem;
+      margin-bottom: 3rem; }
+    .form-container .form__label {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem; }
+    .form-container .form .input {
+      font-family: inherit;
+      font-size: 1.5rem;
+      color: #333;
+      height: 3rem;
+      width: 95%;
+      padding: 0 0.5rem;
+      border: none;
+      outline: none;
+      border-radius: 2px; }
+      .form-container .form .input__submit {
+        font-family: inherit;
+        font-size: 1.6rem;
+        justify-self: center;
+        cursor: pointer;
+        padding: 1rem 10rem;
+        background-color: #00ffff;
+        color: #333;
+        border: none;
+        border-radius: 3px;
+        transition: background-color 0.4s ease; }
+        .form-container .form .input__submit:hover {
+          background-color: #ffc400; }
+
+.footer {
+  background-color: #252525;
+  color: #777;
+  font-size: 1.1rem;
+  height: 3vh;
+  padding: 1rem 0;
+  text-align: center; }

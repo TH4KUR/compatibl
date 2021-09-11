@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+////////////////////////////////////////////////
+// Variables
+$color-primary: #ff0080;
+$color-secondary: #00ffff;
+$color-tertiary: #ffc400;
+
+////////////////////////////////////////////////
+// REUSABLE STYLES
+.link {
+  text-decoration: none;
+  &__catchy {
+    color: #eee !important;
+    background-color: $color-primary;
+    transition: background-color 0.3s ease;
+    padding: 0.9rem 1.5rem !important;
+    border-radius: 0.4rem;
+    &:hover {
+      background-color: rgba($color-primary, 0.8);
+    }
+    &--companion {
+      color: #eee;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+}
+
+.heading {
+  font-weight: 400;
+  &__primary {
+    color: #eee;
+    font-size: 2.5rem;
+  }
+  &__secondary {
+    color: #ffc400;
+    font-style: normal;
+    font-size: 2.75rem;
+  }
+}
+.u-margin-small {
+  margin-bottom: 1rem;
+}
+.u-margin-medium {
+  margin-bottom: 2rem;
+}
+.u-margin-large {
+  margin-bottom: 3rem;
+}
+////////////////////////////////////////////////
+// NAVBAR
+.branding {
+  @media only screen and (max-width: 40.5rem) {
+    display: none;
+  }
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  height: 9vh;
+  padding: 0rem 2rem;
+  //   border-bottom: 1px solid $color-primary;
+  box-shadow: 0px 1px 3px $color-primary;
+
+  &__logo {
+    &:before {
+      content: "";
+      display: inline-block;
+      transform: translateX(0.5rem);
+      height: 3rem;
+      width: 3rem;
+      z-index: 1;
+      background-color: $color-primary;
+      border-radius: 50%;
+    }
+    &:after {
+      display: inline-block;
+      z-index: 1;
+      content: "";
+      height: 3rem;
+      width: 3rem;
+      background-color: $color-secondary;
+      border-radius: 50%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    font-size: 1.6rem;
+  }
+  &__item:not(:last-child) {
+    margin-right: 3rem;
+  }
+
+  &__link {
+    color: #eee;
+  }
+}
+////////////////////////////////////////////////////
+// MAIN
+main {
+  display: grid;
+  grid-gap: 1.5rem;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  height: calc(100vh - 9vh);
+  background-image: linear-gradient(to right, #000000c4, #0000003f),
+    url(../login-bg-compressed.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media only screen and (max-width: 39.0625em) {
+    background-image: linear-gradient(to right, #0000003f, #0000003f),
+      url(../login-bg-compressed.jpg);
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/////////////////////////////////////////
+// FORM
+
+.showcase {
+  align-self: start;
+  padding: 2rem;
+  @media only screen and (max-width: 39.0625em) {
+    display: none;
+  }
+  &__text {
+    transform: translateY(9rem);
+    font-weight: 300;
+    color: #eee;
+    font-size: 2.25rem;
+    span {
+      font-size: 2.5rem;
+      font-weight: 400;
+      display: block;
+      color: $color-secondary;
+      font-size: 3.5rem;
+    }
+  }
+}
+.form-container {
+  color: #eee;
+  border-radius: 3px;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(min-content, max-content)) 1fr;
+  grid-gap: 1rem;
+  background-color: rgba(#000, 0.55);
+  padding: 0.75rem 1rem;
+  height: auto;
+  width: 30rem;
+
+  .form {
+    display: grid;
+    grid-template-rows: repeat(5, minmax(min-content, max-content));
+    grid-row-gap: 1.5rem;
+    // align-content: center;
+
+    &__info {
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    &__label {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .input {
+      font-family: inherit;
+      font-size: 1.5rem;
+      color: #333;
+      height: 3rem;
+      width: 95%;
+      padding: 0 0.5rem;
+      border: none;
+      outline: none;
+      border-radius: 2px;
+
+      &__submit {
+        font-family: inherit;
+        font-size: 1.6rem;
+        justify-self: center;
+        cursor: pointer;
+        padding: 1rem 10rem;
+        background-color: $color-secondary;
+        color: #333;
+        border: none;
+        border-radius: 3px;
+        transition: background-color 0.4s ease;
+        &:hover {
+          background-color: $color-tertiary;
+        }
+      }
+    }
+  }
+}
+
+///////////////////////////////////////
+// FOOTER
+
+.footer {
+  background-color: #252525;
+  color: #777;
+  font-size: 1.1rem;
+  height: 3vh;
+  padding: 1rem 0;
+  text-align: center;
+}
